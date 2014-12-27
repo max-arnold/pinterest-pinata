@@ -60,7 +60,7 @@ class PinterestPinata(object):
         if not username:
             raise PinterestPinataException('Illegal arguments username={username}'.format(username=username))
 
-        res = self._request('http://www.pinterest.com/' + username + '/')
+        res = self._request('http://www.pinterest.com/' + username + '/boards/')
 
         boards = []
         for x in re.findall(r'<a.*class="boardLinkWrapper".*', res[0]):
